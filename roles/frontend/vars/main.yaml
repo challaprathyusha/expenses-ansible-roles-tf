@@ -1,0 +1,3 @@
+APP_HOST: backend.expensesnote.site
+APP_LOCATION: /usr/share/nginx/html
+COMPONENT:  frontend

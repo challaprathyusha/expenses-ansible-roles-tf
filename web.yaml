@@ -1,0 +1,7 @@
+- name: configuring web server using ansible roles
+  hosts:  web
+  vars_files:
+    - vaultsecrets.yaml
+  become: yes
+  roles: 
+    - web

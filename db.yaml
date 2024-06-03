@@ -1,0 +1,7 @@
+- name: configuring db server using ansible roles
+  hosts:  db
+  vars_files:
+    - vaultsecrets.yaml
+  become: yes
+  roles: 
+    - db

@@ -1,0 +1,7 @@
+- name: configuring app server using ansible roles
+  hosts:  app
+  vars_files:
+    - vaultsecrets.yaml
+  become: yes
+  roles: 
+    - app
