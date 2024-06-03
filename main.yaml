@@ -1,5 +1,5 @@
 - name: configure "{{COMPONENT}}" server using roles
-  hosts: local
+  hosts: all
   connection: local
   become: yes
   vars_files:
