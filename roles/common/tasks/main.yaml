@@ -9,13 +9,19 @@
     path: "{{APP_LOCATION}}"
     state: directory
 
-- name: download application code
-  ansible.builtin.get_url:
-    url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{COMPONENT}}-v2.zip
-    dest: /tmp/{{COMPONENT}}.zip
+# - name: download application code
+#   ansible.builtin.get_url:
+#     url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{COMPONENT}}-v2.zip
+#     dest: /tmp/{{COMPONENT}}.zip
 
-- name: extract the application code 
+# - name: extract the application code 
+#   ansible.builtin.unarchive:
+#     src:  /tmp/{{COMPONENT}}.zip
+#     dest: "{{APP_LOCATION}}"
+#     remote_src: yes
+
+- name: download the artifact from nexus
   ansible.builtin.unarchive:
-    src:  /tmp/{{COMPONENT}}.zip
-    dest: "{{APP_LOCATION}}"
+    src: "http://{{ nexus_url }}/repository/{{ COMPONENT }}/com/expense/{{ COMPONENT }}/{{ appVersion }}/{{ COMPONENT }}-{{ appVersion }}.zip"
+    dest: "{{ APP_LOCATION }}"
     remote_src: yes

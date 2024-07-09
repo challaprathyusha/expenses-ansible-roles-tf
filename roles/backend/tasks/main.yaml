@@ -26,12 +26,12 @@
     name: common
     tasks_from: main
 
-- name: downloading application dependencies
-# tags: 
-#  - deployment
-  ansible.builtin.command:  npm install
-  args:
-    chdir: /app
+# - name: downloading application dependencies
+# # tags: 
+# #  - deployment
+#   ansible.builtin.command:  npm install
+#   args:
+#     chdir: /app
 
 - name: copying backend service file to app server
   ansible.builtin.template:

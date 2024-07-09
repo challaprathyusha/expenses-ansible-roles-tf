@@ -2,3 +2,4 @@ DB_HOST:  db-dev.expensesnote.site
 mysql_password: ExpenseApp1
 DB_USER:  root
 APP_HOST: backend.app-dev.expensesnote.site
+nexus_url: nexus.expensesnote.site
